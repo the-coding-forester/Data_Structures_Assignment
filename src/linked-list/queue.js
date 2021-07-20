@@ -7,15 +7,26 @@ const LinkedList = require("./linkedList");
 class Queue {
   constructor() {
     this.linkedList = new LinkedList();
+    this.first = null;
+    this.last = null;
+    this.size = 0;
   }
 
-  enqueue(value) {}
+  enqueue(value) {
 
-  dequeue() {}
+  }
 
-  peek() {}
+  dequeue() {
 
-  isEmpty() {}
+  }
+
+  peek() {
+
+  }
+
+  isEmpty() {
+    return !this.size;
+  }
 }
 
 module.exports = Queue;
