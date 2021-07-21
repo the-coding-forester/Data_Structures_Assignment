@@ -12,6 +12,21 @@
 
 function removeDuplicates(sortedLinkedList) {
   // TODO: implement an algorithm to remove duplicate values from a sorted linked list.
+  const unique = new Set();
+  let prev = null;
+  let current = sortedLinkedList.head;
+
+
+  while (current !== null) {
+    if (unique.has(current.value)) {
+      prev.next = current.next;
+      current = current.next;
+    } else {
+      unique.add(current.value);
+      prev = current;
+      current = current.next;
+    }
+  }
 
   return sortedLinkedList;
 }
