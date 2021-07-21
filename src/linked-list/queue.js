@@ -7,25 +7,24 @@ const LinkedList = require("./linkedList");
 class Queue {
   constructor() {
     this.linkedList = new LinkedList();
-    this.first = null;
-    this.last = null;
-    this.size = 0;
   }
 
   enqueue(value) {
-
+    this.linkedList.insert(value);
   }
 
   dequeue() {
-
+    return this.linkedList.remove(() => true);
   }
 
   peek() {
-
+    let value = this.dequeue()
+    this.linkedList.insertAtHead(value)
+    return value;
   }
 
   isEmpty() {
-    return !this.size;
+    return !this.linkedList.length;
   }
 }
 
